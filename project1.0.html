@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trump</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-left {
+            flex: 1;
+        }
+
+        .hero-left h1 {
+            font-size: 48px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+
+        .subtext {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #5b5b5b;
+            width: 80%;
+        }
+
+        .buttons {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .nigga {
+            background: #7b00ff;
+            color: black;
+            border: 2px solid blue;
+        }
+
+        .nigga:hover {
+            color: white;
+            background-color: #7b00ff;
+        }
+
+        .outline {
+            border: 2px solid #7b00ff;
+            color: #7b00ff;
+        }
+
+        .outline:hover {
+            background: #7b00ff;
+            color: white;
+        }
+
+        .hero-right img {
+            width: 350px;
+            border-radius: 10px;
+        }
+
+        #gu {
+            margin-bottom: 150px;
+        }
+
+        .skills-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: 700;
+
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            text-shadow: 1px 1px 2px rgb(117, 107, 107);
+            margin-bottom: 48px;
+        }
+
+        .skill-card {
+            width: 260px;
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            transition: 0.3s;
+            background: white;
+            box-shadow: 7px 7px 7px rgba(4, 4, 4, 0.08);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .skill-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .skill-card button {
+            padding: 10px 18px;
+            border: none;
+            background: #000;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .skill-card button:hover {
+            background: #ffffff;
+            color: black;
+            border: 1px solid black;
+            border-radius: 7px;
+        }
+
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin: 40px;
+        }
+
+        .project-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            border: 2px solid #e8e0fb;
+            border-radius: 20px;
+            padding: 25px;
+            gap: 20px;
+        }
+
+        .project-card img {
+            width: 300px;
+            border-radius: 15px;
+        }
+
+        .project-content {
+            max-width: 480px;
+        }
+
+        .project-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .desc {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .btn {
+            background: #8a2be2;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #6c1ec4;
+        }
+
+
+        .container {
+            max-width: 1260px;
+            margin: 40px;
+            padding: 36px 32px;
+
+            position: relative;
+        }
+
+        .experience-title {
+            text-align: center;
+            color: #A259F7;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .brands {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 26px;
+            margin-bottom: 38px;
+        }
+
+        .brand-row {
+            display: flex;
+            justify-content: center;
+            gap: 38px;
+        }
+
+        .brand-card {
+            background: #fff;
+            color: #212121;
+            box-shadow: 0 0 8px rgba(162, 89, 247, 0.08);
+            border-radius: 10px;
+            font-size: 21px;
+            font-weight: 500;
+            padding: 32px 28px;
+            min-width: 160px;
+            text-align: center;
+            border: 1px solid #ededed;
+            transition: box-shadow 0.2s;
+            box-shadow: 7px 7px 7px black;
+        }
+
+        .brand-card:hover {
+            box-shadow: 0 0 14px rgba(162, 89, 247, 0.16);
+            transform: translate(-5px,-5px);
+        }
+
+        .explore-section {
+            text-align: center;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .explore-btn {
+            background: #A259F7;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 34px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(162, 89, 247, 0.1);
+            transition: background 0.18s;
+        }
+
+        .explore-btn:hover {
+            background: #5321AA;
+        }
+
+
+
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1260px;
+            margin: 0 auto;
+            padding: 18px 32px;
+            font-size: 15px;
+
+            .container {
+                max-width: 1260px;
+                margin: 40px auto;
+
+                color: #888;
+                border-top: 1px solid #eee;
+            }
+
+            .social-icons span {
+                margin-left: 16px;
+                font-size: 22px;
+            }
+    </style>
+</head>
+
+<body>
+    <div id="gu">
+        <section class="hero">
+            <div class="hero-left">
+                <h1>
+                    Front-End Developer <br>
+                    <span style=" color: #8a2be2; /* Purple highlight */
+                     ;">Crafting</span> Modern Web <br>
+                    Experiences
+                </h1>
+
+                <p class="subtext" style="font-family: justify-self;">
+                    Passionate Front-End Web Developer with experience in designing
+                    and developing unique and dynamic websites and applications.
+                </p>
+
+                <div class="buttons">
+                    <a href="#" class="btn nigga">Explore Works</a>
+                    <a href="#" class="btn outline">Download CV</a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/hero-dev.png"
+                    alt="Developer Image">
+            </div>
+        </section>
+        <!--first part ends here-->
+
+        <section class="skills-section">
+
+            <p style="color: rgb(128, 0, 128);text-align: center;letter-spacing: 4px;">SKILLS
+            </p>
+            <h2 class="section-title">Skills That Power My Code</h2>
+
+            <div class="skills-container">
+
+                <div class="skill-card">
+                    <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/html.png"
+                        alt="HTML Logo">
+                    <h3>HTML 5</h3>
+                    <p>Lorem ipsum is simply dummy text of the printing.</p>
+                    <button>Explore Works</button>
+                </div>
+
+                <div class="skill-card">
+                    <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/css.png"
+                        alt="CSS Logo">
+                    <h3>CSS 3</h3>
+                    <p>Lorem ipsum is simply dummy text of the printing.</p>
+                    <button>Explore Works</button>
+                </div>
+
+                <div class="skill-card">
+                    <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/js.png"
+                        alt="JS Logo">
+                    <h3>JavaScript (ES6)</h3>
+                    <p>Lorem ipsum is simply dummy text of the printing.</p>
+                    <button>Explore Works</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section">
+
+            <div class="skills-container">
+
+                <div class="skill-card">
+                    <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/react.png"
+                        alt="React Logo">
+                    <h3>React</h3>
+                    <p>Lorem ipsum is simply dummy text of the printing.</p>
+                    <button>Explore Works</button>
+                </div>
+
+                <div class="skill-card">
+                    <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/redux.png"
+                        alt="Redux Logo">
+                    <h3>Redux</h3>
+                    <p>Lorem ipsum is simply dummy text of the printing.</p>
+                    <button>Explore Works</button>
+                </div>
+
+                <div class="skill-card">
+                    <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/typescript.png"
+                        alt="TypeScript Logo">
+
+
+                    <h3>TypeScript</h3>
+                    <p>Lorem ipsum is simply dummy text of the printing.</p>
+                    <button>Explore Works</button>
+                </div>
+
+            </div>
+        </section>
+        <section class="skills-section">
+
+
+            <div class="skills-container">
+
+                <div class="skill-card">
+                    <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/socket.png"
+                        alt="Socket.IO Logo">
+                    <h3>Socket.IO</h3>
+                    <p>Lorem ipsum is simply dummy text of the printing.</p>
+                    <button>Explore Works</button>
+                </div>
+
+                <div class="skill-card">
+                    <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/mui.png"
+                        alt="MUI Logo">
+                    <h3>MUI</h3>
+                    <p>Lorem ipsum is simply dummy text of the printing.</p>
+                    <button>Explore Works</button>
+                </div>
+
+                <div class="skill-card">
+                    <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/next.png"
+                        alt="Next Logo">
+                    <h3>Next.js</h3>
+                    <p>Lorem ipsum is simply dummy text of the printing.</p>
+                    <button>Explore Works</button>
+                </div>
+
+            </div>
+        </section>
+        <!--second part ends here-->
+        <section>
+            <div>
+                <p style="color: rgb(128, 0, 128);text-align: center;letter-spacing: 4px;">PROJECT</p>
+                <h1 style="text-align: center;">My Recent Works</h1>
+            </div>
+            <section class="projects">
+
+                <div class="project-card">
+                    <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/project-doctoriano.png"
+                        alt="Doctoriano App">
+                    <div class="project-content">
+                        <h2>Doctoriano</h2>
+                        <p class="date">June 2025 - November 2025</p>
+                        <p class="desc">
+                            Not until the creation and maintenance of decent conditions of life for all people are
+                            recognized
+                            and accepted as a common obligation of all people and all countries.
+                        </p>
+                        <a href="#" class="btn">Download App</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h2>IELTSTAR</h2>
+                        <p class="date">September 2025 - October 2025</p>
+                        <p class="desc">
+                            Not until the creation and maintenance of decent conditions of life for all people are
+                            recognized
+                            and accepted as a common obligation of all people and all countries.
+                        </p>
+                        <a href="#" class="btn">Explore Website</a>
+                    </div>
+                    <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/project-ieltstar.png"
+                        alt="IELTSTAR Website">
+                </div>
+
+                <div class="project-card">
+                    <img src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/project-mewopay.png"
+                        alt="MewoPay Website">
+                    <div class="project-content">
+                        <h2>MewoPay</h2>
+                        <p class="date">January 2025 - June 2025</p>
+                        <p class="desc">
+                            Not until the creation and maintenance of decent conditions of life for all people are
+                            recognized
+                            and accepted as a common obligation of all people and all countries.
+                        </p>
+                        <a href="#" class="btn">Explore Website</a>
+                    </div>
+                </div>
+
+            </section>
+            <!--Thied section ends here-->
+            <section>
+                <div class="container">
+                    <h4 class="experience-title">EXPERIENCE</h4>
+                    <h2 class="main-title">Brands That Trusted My Work</h2>
+                    <div class="brands">
+                        <div class="brand-row">
+                            <div class="brand-card"><img
+                                    src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/brands-1.png">
+                            </div>
+                            <div class="brand-card"><img
+                                    src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/brands-2.png">
+                            </div>
+                            <div class="brand-card"><img
+                                    src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/brands-3.png">
+                            </div>
+                            <div class="brand-card"><img
+                                    src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/brands-4.png">
+                            </div>
+                        </div>
+                        <div class="brand-row">
+                            <div class="brand-card"><img
+                                    src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/brands-5.png">
+                            </div>
+                            <div class="brand-card"><img
+                                    src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/brands-6.png">
+                            </div>
+                            <div class="brand-card"><img
+                                    src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/brands-7.png"
+                                    alt="FedEx"></div>
+                        </div>
+                    </div>
+                    <div class="explore-section">
+                        <button class="explore-btn">Explore Now</button>
+                    </div>
+
+                </div>
+                <footer>
+                    <small>© 2024,Adolf Hitler- All rights reserved</small>
+                    <div class="social-icons">
+                        <span><img
+                                src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/icon-fb.png"></span>
+                        <span><img
+                                src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/icon-github.png"></span>
+                        <span><img
+                                src="../hero-dev-portfolio-resources-main/hero-dev-portfolio-resources-main/assets/icon-instagram.png"></span>
+                    </div>
+                </footer>
+            </section>
+
+
+
+</body>
+
+</html>
